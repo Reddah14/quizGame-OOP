@@ -1,11 +1,13 @@
 package com._Nology;
 
+import java.util.ArrayList;
+
 public class Question {
     int id;
     String descriptionQuestion;
-    Answer[] answers;
+    ArrayList<Answer> answers;
 
-    public Question(int id, String descriptionQuestion, Answer[] answers) {
+    public Question(int id, String descriptionQuestion, ArrayList<Answer> answers) {
         this.id = id;
         this.descriptionQuestion = descriptionQuestion;
         this.answers = answers;
@@ -27,11 +29,11 @@ public class Question {
         this.descriptionQuestion = descriptionQuestion;
     }
 
-    public Answer[] getAnswers() {
+    public ArrayList<Answer> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(Answer[] answers) {
+    public void setAnswers(ArrayList<Answer> answers) {
         this.answers = answers;
     }
 }

@@ -1,12 +1,22 @@
 package com._Nology;
 
 public class Answer {
+    String codeAnswer;
     String descriptionAnswer;
     boolean isCorrect;
 
-    public Answer(String descriptionAnswer, boolean isCorrect) {
+    public Answer(String codeAnswer, String descriptionAnswer, boolean isCorrect) {
+        this.codeAnswer = codeAnswer;
         this.descriptionAnswer = descriptionAnswer;
         this.isCorrect = isCorrect;
+    }
+
+    public String getCodeAnswer() {
+        return codeAnswer;
+    }
+
+    public void setCodeAnswer(String codeAnswer) {
+        this.codeAnswer = codeAnswer;
     }
 
     public String getDescriptionAnswer() {
@@ -17,7 +27,7 @@ public class Answer {
         this.descriptionAnswer = descriptionAnswer;
     }
 
-    public boolean isCorrect() {
+    public boolean getIsCorrect() {
         return isCorrect;
     }
 
