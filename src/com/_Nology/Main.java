@@ -81,7 +81,7 @@ public class Main {
         answers.add(createAnswer("d", "Malaga", false));
 
         return createQuestion(0, "Capital city of Spain ?", answers);
-    }
+    } 
 
     public static Question getFourthQuestionAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
