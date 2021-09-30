@@ -43,7 +43,14 @@ public class Main {
         }
         System.out.println("Finished! Thank you very much for playing! your score is: " + player1game.getPlayerScore());
     }
-
+    public static Boolean isValidAnswer(String selectedAnswer) {
+        selectedAnswer = selectedAnswer.toLowerCase();
+        if (!selectedAnswer.equals("a") && !selectedAnswer.equals("b") && !selectedAnswer.equals("c") && !selectedAnswer.equals("d")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     public static Boolean isCorrectThisAnswer(String selectedCodeAnswer, ArrayList<Answer> answers) {
         answers.removeIf(answer -> !answer.codeAnswer.contains(selectedCodeAnswer));
         if (answers.get(0).getIsCorrect()) {
