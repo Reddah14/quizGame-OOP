@@ -5,15 +5,15 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-
+    // TODO: Add another player - Add timing (https://stackabuse.com/how-to-get-current-date-and-time-in-java/)
     public static void main(String[] args) {
         // write your code here
         Scanner myScanner = new Scanner(System.in);
         System.out.println("What's you're name?");
         String playerName = myScanner.nextLine();
-        System.out.println("Welcome to Fun with Capitals, " + playerName);
-        //Game newGame = new Game();
-        Score myScore = new Score(0);
+        System.out.println("Welcome to Fun with Capitals, " + playerName + " !");
+        System.out.println("Every right answer will give you 10 points, and you will have 5 questions..");
+        System.out.println("Good Luck ! ^^");
 
         ArrayList<Question> questions = new ArrayList<Question>();
         questions.add(getFirstQuestionWithAnswers());
@@ -43,11 +43,12 @@ public class Main {
                 player1game.addPlayerScore(10);
                 System.out.println("Bravoooo, You got it right ! you accumulate 10 points!");
             } else {
-                System.out.println("Oops, you should study more geo!! better luck next time!");
+                System.out.println("Oops.. you should study more geography! better luck next time ! :)");
             }
         }
-        System.out.println("Finished! Thank you very much for playing! your score is: " + player1game.getPlayerScore());
+        System.out.println("Well Done! Thank you very much for playing! your score is: " + player1game.getPlayerScore());
     }
+
     public static Boolean isValidAnswer(String selectedAnswer) {
         selectedAnswer = selectedAnswer.toLowerCase();
         if (!selectedAnswer.equals("a") && !selectedAnswer.equals("b") && !selectedAnswer.equals("c") && !selectedAnswer.equals("d")) {
@@ -56,6 +57,7 @@ public class Main {
             return true;
         }
     }
+
     public static Boolean isCorrectThisAnswer(String selectedCodeAnswer, ArrayList<Answer> answers) {
         answers.removeIf(answer -> !answer.codeAnswer.contains(selectedCodeAnswer));
         if (answers.get(0).getIsCorrect()) {
