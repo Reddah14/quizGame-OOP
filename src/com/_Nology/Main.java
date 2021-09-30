@@ -67,52 +67,52 @@ public class Main {
 
     public static Question getFirstQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
-        answers.add(createAnswer("a", "Paris", true));
-        answers.add(createAnswer("b", "Madrid", false));
-        answers.add(createAnswer("c", "London", false));
-        answers.add(createAnswer("d", "Malaga", false));
+        answers.add(createAnswer("a", "San Juan", false));
+        answers.add(createAnswer("b", "Asuncion", false));
+        answers.add(createAnswer("c", "San Jose", true));
+        answers.add(createAnswer("d", "Santiago", false));
 
-        return createQuestion(0, "Capital city of France ?", answers);
+        return createQuestion(0, "Capital city of Costa Rica ?", answers);
     }
 
     public static Question getSecondQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
-        answers.add(createAnswer("a", "Brussels", false));
-        answers.add(createAnswer("b", "Madrid", false));
-        answers.add(createAnswer("c", "Sidney", true));
-        answers.add(createAnswer("d", "Malaga", false));
+        answers.add(createAnswer("a", "Seoul", false));
+        answers.add(createAnswer("b", "Khartoum", false));
+        answers.add(createAnswer("c", "Hanoi", true));
+        answers.add(createAnswer("d", "Taipei", false));
 
-        return createQuestion(0, "Capital city of Australia ?", answers);
+        return createQuestion(0, "Capital city of Vietnam ?", answers);
     }
 
     public static Question getThirdQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
-        answers.add(createAnswer("a", "Paris", false));
-        answers.add(createAnswer("b", "Madrid", true));
-        answers.add(createAnswer("c", "London", false));
-        answers.add(createAnswer("d", "Malaga", false));
+        answers.add(createAnswer("a", "Male", true));
+        answers.add(createAnswer("b", "Maseru", false));
+        answers.add(createAnswer("c", "Port Louis", false));
+        answers.add(createAnswer("d", "chisinau", false));
 
-        return createQuestion(0, "Capital city of Spain ?", answers);
+        return createQuestion(0, "Capital city of Maldives ?", answers);
     }
 
     public static Question getFourthQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
-        answers.add(createAnswer("a", "Berlin", true));
+        answers.add(createAnswer("a", "Muscat", false));
         answers.add(createAnswer("b", "Munich", false));
-        answers.add(createAnswer("c", "London", false));
-        answers.add(createAnswer("d", "Malaga", false));
+        answers.add(createAnswer("c", "Bucharest", true));
+        answers.add(createAnswer("d", "Belgrade", false));
 
-        return createQuestion(0, "Capital city of Germany ?", answers);
+        return createQuestion(0, "Capital city of Romania ?", answers);
     }
 
     public static Question getFifthQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
-        answers.add(createAnswer("a", "Paris", false));
-        answers.add(createAnswer("b", "Madrid", false));
-        answers.add(createAnswer("c", "Oporto", false));
-        answers.add(createAnswer("d", "Lisboa", true));
+        answers.add(createAnswer("a", "Brussels", false));
+        answers.add(createAnswer("b", "Bern", true));
+        answers.add(createAnswer("c", "San Marino", false));
+        answers.add(createAnswer("d", "Tallin", true));
 
-        return createQuestion(0, "Capital city of Portugal ?", answers);
+        return createQuestion(0, "Capital city of Switzerland ?", answers);
     }
 
     public static Question createQuestion(int id, String descriptionQuestion, ArrayList<Answer> answers) {
