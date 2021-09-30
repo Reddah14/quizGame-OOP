@@ -12,6 +12,7 @@ public class Main {
         String playerName = myScanner.nextLine();
         System.out.println("Welcome to Fun with Capitals, " + playerName);
         //Game newGame = new Game();
+        Score myScore = new Score(0);
 
         Answer answer1_1 = new Answer("a", "Paris", true);
         Answer answer1_2 = new Answer("b", "Madrid", false);
@@ -34,12 +35,15 @@ public class Main {
         System.out.println("Choose your answer!");
         String playerAnswer = myScanner.nextLine();
         System.out.println("Your chosen answer is: " + playerAnswer);
-        answers.removeIf( answer -> !answer.codeAnswer.contains(playerAnswer));
+        answers.removeIf(answer -> !answer.codeAnswer.contains(playerAnswer));
         if (answers.get(0).getIsCorrect()) {
-            System.out.println("You're champion!");
+            myScore.setPlayerScore(10);
+            System.out.println("You're a champion! your score is: " + myScore.getPlayerScore());
         } else {
-            System.out.println("You Lose!");
+            myScore.setPlayerScore(0);
+            System.out.println("You Lose! your score is: " + myScore.getPlayerScore());
         }
+        hola("hola");
     }
 
 //    public void generateListOfQuestions() {
@@ -49,4 +53,9 @@ public class Main {
 //        Answer answers1_4 = new Answer("Malaga", false);
 //        Question question1 = new Question(0, "Capital city of France?", new Answer[]{answers1_1, answers1_2, answers1_3, answers1_4});
 //    }
+
+    private static void hola(String HelloWorld) {
+        System.out.println(HelloWorld);
+    }
 }
+
