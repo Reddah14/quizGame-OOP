@@ -34,6 +34,11 @@ public class Main {
             System.out.println("Choose your answer!");
             String playerAnswer = myScanner.nextLine();
 
+            while (!isValidAnswer(playerAnswer)) {
+                System.out.println("Not a valid answer, select a correct option please!");
+                playerAnswer = myScanner.nextLine();
+            }
+
             if (isCorrectThisAnswer(playerAnswer, question.answers)) {
                 player1game.addPlayerScore(10);
                 System.out.println("Bravoooo, You got it right ! you accumulate 10 points!");
