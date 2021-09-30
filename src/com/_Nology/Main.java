@@ -16,11 +16,11 @@ public class Main {
         Score myScore = new Score(0);
 
         ArrayList<Question> questions = new ArrayList<Question>();
-        questions.add(getFirstQuestionAnswers());
-        questions.add(getSecondQuestionAnswers());
-        questions.add(getThirdQuestionAnswers());
-        questions.add(getFourthQuestionAnswers());
-        questions.add(getFifthQuestionAnswers());
+        questions.add(getFirstQuestionWithAnswers());
+        questions.add(getSecondQuestionWithAnswers());
+        questions.add(getThirdQuestionWithAnswers());
+        questions.add(getFourthQuestionWithAnswers());
+        questions.add(getFifthQuestionWithAnswers());
 
         QuizGame player1game = new QuizGame(playerName, 0, questions);
 
@@ -53,7 +53,7 @@ public class Main {
         }
     }
 
-    public static Question getFirstQuestionAnswers() {
+    public static Question getFirstQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(createAnswer("a", "Paris", true));
         answers.add(createAnswer("b", "Madrid", false));
@@ -63,7 +63,7 @@ public class Main {
         return createQuestion(0, "Capital city of France ?", answers);
     }
 
-    public static Question getSecondQuestionAnswers() {
+    public static Question getSecondQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(createAnswer("a", "Brussels", false));
         answers.add(createAnswer("b", "Madrid", false));
@@ -73,7 +73,7 @@ public class Main {
         return createQuestion(0, "Capital city of Australia ?", answers);
     }
 
-    public static Question getThirdQuestionAnswers() {
+    public static Question getThirdQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(createAnswer("a", "Paris", false));
         answers.add(createAnswer("b", "Madrid", true));
@@ -81,9 +81,9 @@ public class Main {
         answers.add(createAnswer("d", "Malaga", false));
 
         return createQuestion(0, "Capital city of Spain ?", answers);
-    } 
+    }
 
-    public static Question getFourthQuestionAnswers() {
+    public static Question getFourthQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(createAnswer("a", "Berlin", true));
         answers.add(createAnswer("b", "Munich", false));
@@ -93,7 +93,7 @@ public class Main {
         return createQuestion(0, "Capital city of Germany ?", answers);
     }
 
-    public static Question getFifthQuestionAnswers() {
+    public static Question getFifthQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(createAnswer("a", "Paris", false));
         answers.add(createAnswer("b", "Madrid", false));
