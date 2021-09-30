@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         // write your code here
         Scanner myScanner = new Scanner(System.in);
@@ -14,48 +15,100 @@ public class Main {
         //Game newGame = new Game();
         Score myScore = new Score(0);
 
-        Answer answer1_1 = new Answer("a", "Paris", true);
-        Answer answer1_2 = new Answer("b", "Madrid", false);
-        Answer answer1_3 = new Answer("c", "London", false);
-        Answer answer1_4 = new Answer("d", "Malaga", false);
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(getFirstQuestionAnswers());
+        questions.add(getSecondQuestionAnswers());
+        questions.add(getThirdQuestionAnswers());
+        questions.add(getFourthQuestionAnswers());
+        questions.add(getFifthQuestionAnswers());
 
-        ArrayList<Answer> answers = new ArrayList<Answer>();
-        answers.add(answer1_1);
-        answers.add(answer1_2);
-        answers.add(answer1_3);
-        answers.add(answer1_4);
+        QuizGame player1game = new QuizGame(playerName, 0, questions);
 
-        Question question1 = new Question(0, "Capital city of France ?", answers);
-        System.out.println(question1.getDescriptionQuestion());
-
-        for (Answer answer : answers) // foreach
+        for (Question question : player1game.questions) // foreach
         {
-            System.out.println(answer.getCodeAnswer() + ") " + answer.getDescriptionAnswer());
+            System.out.println(question.getDescriptionQuestion());
+            for (Answer answer : question.answers) // foreach
+            {
+                System.out.println(answer.getCodeAnswer() + ") " + answer.getDescriptionAnswer());
+            }
+            System.out.println("Choose your answer!");
+            String playerAnswer = myScanner.nextLine();
+
+            if (isCorrectThisAnswer(playerAnswer, question.answers)) {
+                player1game.addPlayerScore(10);
+                System.out.println("Bravoooo, You got it right ! you accumulate 10 points!");
+            } else {
+                System.out.println("Oops, you should study more geo!! better luck next time!");
+            }
         }
-        System.out.println("Choose your answer!");
-        String playerAnswer = myScanner.nextLine();
-        System.out.println("Your chosen answer is: " + playerAnswer);
-        answers.removeIf(answer -> !answer.codeAnswer.contains(playerAnswer));
-        if (answers.get(0).getIsCorrect()) {
-            myScore.setPlayerScore(10);
-            System.out.println("You're a champion! your score is: " + myScore.getPlayerScore());
-        } else {
-            myScore.setPlayerScore(0);
-            System.out.println("You Lose! your score is: " + myScore.getPlayerScore());
-        }
-        hola("hola");
+        System.out.println("Finished! Thank you very much for playing! your score is: " + player1game.getPlayerScore());
     }
 
-//    public void generateListOfQuestions() {
-//        Answer answers1_1 = new Answer("Paris", true);
-//        Answer answers1_2 = new Answer("Madrid", false);
-//        Answer answers1_3 = new Answer("London", false);
-//        Answer answers1_4 = new Answer("Malaga", false);
-//        Question question1 = new Question(0, "Capital city of France?", new Answer[]{answers1_1, answers1_2, answers1_3, answers1_4});
-//    }
+    public static Boolean isCorrectThisAnswer(String selectedCodeAnswer, ArrayList<Answer> answers) {
+        answers.removeIf(answer -> !answer.codeAnswer.contains(selectedCodeAnswer));
+        if (answers.get(0).getIsCorrect()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-    private static void hola(String HelloWorld) {
-        System.out.println(HelloWorld);
+    public static Question getFirstQuestionAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Paris", true));
+        answers.add(createAnswer("b", "Madrid", false));
+        answers.add(createAnswer("c", "London", false));
+        answers.add(createAnswer("d", "Malaga", false));
+
+        return createQuestion(0, "Capital city of France ?", answers);
+    }
+
+    public static Question getSecondQuestionAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Brussels", false));
+        answers.add(createAnswer("b", "Madrid", false));
+        answers.add(createAnswer("c", "Sidney", true));
+        answers.add(createAnswer("d", "Malaga", false));
+
+        return createQuestion(0, "Capital city of Australia ?", answers);
+    }
+
+    public static Question getThirdQuestionAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Paris", false));
+        answers.add(createAnswer("b", "Madrid", true));
+        answers.add(createAnswer("c", "London", false));
+        answers.add(createAnswer("d", "Malaga", false));
+
+        return createQuestion(0, "Capital city of Spain ?", answers);
+    }
+
+    public static Question getFourthQuestionAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Berlin", true));
+        answers.add(createAnswer("b", "Munich", false));
+        answers.add(createAnswer("c", "London", false));
+        answers.add(createAnswer("d", "Malaga", false));
+
+        return createQuestion(0, "Capital city of Germany ?", answers);
+    }
+
+    public static Question getFifthQuestionAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Paris", false));
+        answers.add(createAnswer("b", "Madrid", false));
+        answers.add(createAnswer("c", "Oporto", false));
+        answers.add(createAnswer("d", "Lisboa", true));
+
+        return createQuestion(0, "Capital city of Portugal ?", answers);
+    }
+
+    public static Question createQuestion(int id, String descriptionQuestion, ArrayList<Answer> answers) {
+        return new Question(id, descriptionQuestion, answers);
+    }
+
+    public static Answer createAnswer(String codeAnswer, String descriptionAnswer, boolean isCorrect) {
+        return new Answer(codeAnswer, descriptionAnswer, isCorrect);
     }
 }
 
