@@ -83,7 +83,7 @@ public class Main {
         answers.add(createAnswer("c", "Hanoi", true));
         answers.add(createAnswer("d", "Taipei", false));
 
-        return createQuestion(0, "Capital city of Vietnam ?", answers);
+        return createQuestion(1, "Capital city of Vietnam ?", answers);
     }
 
     public static Question getThirdQuestionWithAnswers() {
@@ -93,7 +93,7 @@ public class Main {
         answers.add(createAnswer("c", "Port Louis", false));
         answers.add(createAnswer("d", "chisinau", false));
 
-        return createQuestion(0, "Capital city of Maldives ?", answers);
+        return createQuestion(2, "Capital city of Maldives ?", answers);
     }
 
     public static Question getFourthQuestionWithAnswers() {
@@ -103,7 +103,7 @@ public class Main {
         answers.add(createAnswer("c", "Bucharest", true));
         answers.add(createAnswer("d", "Belgrade", false));
 
-        return createQuestion(0, "Capital city of Romania ?", answers);
+        return createQuestion(3, "Capital city of Romania ?", answers);
     }
 
     public static Question getFifthQuestionWithAnswers() {
@@ -113,7 +113,7 @@ public class Main {
         answers.add(createAnswer("c", "San Marino", false));
         answers.add(createAnswer("d", "Tallin", true));
 
-        return createQuestion(0, "Capital city of Switzerland ?", answers);
+        return createQuestion(4, "Capital city of Switzerland ?", answers);
     }
 
     public static Question createQuestion(int id, String descriptionQuestion, ArrayList<Answer> answers) {
