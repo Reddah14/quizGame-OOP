@@ -45,7 +45,14 @@ public class Main {
                 System.out.println("Oops.. you should study more geography! better luck next time ! :)");
             }
         }
-        System.out.println("Well Done! Thank you very much for playing! your score is: " + player1game.getPlayerScore());
+        String feedbackMessage = "";
+        if (player1game.getPlayerScore() >= 30) {
+            feedbackMessage = "Congratulations !! Your score is " + player1game.getPlayerScore() + " points ! You are a champ! :D";
+        } else {
+            feedbackMessage = "I'm afraid your score is " + player1game.getPlayerScore() + "points.. You lost the game! Better luck next time ;)";
+        }
+        System.out.println(feedbackMessage);
+    }
     }
 
     public static Boolean isValidAnswer(String selectedAnswer) {
