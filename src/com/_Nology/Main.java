@@ -1,6 +1,7 @@
 package com._Nology;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -14,14 +15,7 @@ public class Main {
         System.out.println("Every right answer will give you 10 points, and you will have 5 questions..");
         System.out.println("Good Luck ! ^^");
 
-        ArrayList<Question> questions = new ArrayList<Question>();
-        questions.add(getFirstQuestionWithAnswers());
-        questions.add(getSecondQuestionWithAnswers());
-        questions.add(getThirdQuestionWithAnswers());
-        questions.add(getFourthQuestionWithAnswers());
-        questions.add(getFifthQuestionWithAnswers());
-
-        QuizGame player1game = new QuizGame(playerName, 0, questions);
+        QuizGame player1game = getRandomQuizSetForQuizGame(playerName);
 
         for (Question question : player1game.questions) // foreach
         {
@@ -37,12 +31,11 @@ public class Main {
                 System.out.println("Not a valid answer, select a correct option please!");
                 playerAnswer = myScanner.nextLine();
             }
-
             if (isCorrectThisAnswer(playerAnswer, question.answers)) {
                 player1game.addPlayerScore(10);
                 System.out.println("Bravoooo, You got it right ! you accumulate 10 points!");
             } else {
-                System.out.println("Oops.. you should study more geography! better luck next time ! :)");
+                System.out.println("Oops.. wrong answer! Better luck next time ! :)");
             }
         }
         String feedbackMessage = "";
@@ -53,6 +46,83 @@ public class Main {
         }
         System.out.println(feedbackMessage);
     }
+
+    public static int generateRandomNumber() {
+        int randomNumber = new Random().nextInt(26 - 0 + 1) + 1;
+        return randomNumber;
+    }
+
+    public static QuizGame getRandomQuizSetForQuizGame(String playerNameParam) {
+        int myRandomNumber = generateRandomNumber();
+        QuizGame myRandomQuizGame = null;
+        if (myRandomNumber > 0 && myRandomNumber <= 5) {
+            myRandomQuizGame = getFirstQuizGame(playerNameParam);
+        } else if (myRandomNumber > 5 && myRandomNumber <= 10) {
+            myRandomQuizGame = getSecondQuizGame(playerNameParam);
+        } else if (myRandomNumber > 10 && myRandomNumber <= 15) {
+            myRandomQuizGame = getThirdQuizGame(playerNameParam);
+        } else if (myRandomNumber > 15 && myRandomNumber <= 20) {
+            myRandomQuizGame = getFourthQuizGame(playerNameParam);
+        } else if (myRandomNumber > 20 && myRandomNumber <= 25) {
+            myRandomQuizGame = getFifthQuizGame(playerNameParam);
+        }
+
+        return myRandomQuizGame;
+    }
+
+    public static QuizGame getFirstQuizGame(String playerNameParam) {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(getFirstQuestionWithAnswers());
+        questions.add(getSecondQuestionWithAnswers());
+        questions.add(getThirdQuestionWithAnswers());
+        questions.add(getFourthQuestionWithAnswers());
+        questions.add(getFifthQuestionWithAnswers());
+
+        return new QuizGame(playerNameParam, 0, questions);
+    }
+
+    public static QuizGame getSecondQuizGame(String playerNameParam) {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(getSixthQuestionWithAnswers());
+        questions.add(getSeventhQuestionWithAnswers());
+        questions.add(getEighthQuestionWithAnswers());
+        questions.add(getNinethQuestionWithAnswers());
+        questions.add(getTenthQuestionWithAnswers());
+
+        return new QuizGame(playerNameParam, 0, questions);
+    }
+
+    public static QuizGame getThirdQuizGame(String playerNameParam) {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(getEleventhQuestionWithAnswers());
+        questions.add(getTwelfthQuestionWithAnswers());
+        questions.add(getThirteenthQuestionWithAnswers());
+        questions.add(getFourteenthQuestionWithAnswers());
+        questions.add(getFifteenthQuestionWithAnswers());
+
+        return new QuizGame(playerNameParam, 0, questions);
+    }
+
+    public static QuizGame getFourthQuizGame(String playerNameParam) {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(getSixteenthQuestionWithAnswers());
+        questions.add(getSeventeenthQuestionWithAnswers());
+        questions.add(getEighteenthQuestionWithAnswers());
+        questions.add(getNineteenthQuestionWithAnswers());
+        questions.add(getTwentiethQuestionWithAnswers());
+
+        return new QuizGame(playerNameParam, 0, questions);
+    }
+
+    public static QuizGame getFifthQuizGame(String playerNameParam) {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(getTwentyFirstQuestionWithAnswers());
+        questions.add(getTwentySecondQuestionWithAnswers());
+        questions.add(getTwentyThirdQuestionWithAnswers());
+        questions.add(getTwentyFourthQuestionWithAnswers());
+        questions.add(getTwentyFifthQuestionWithAnswers());
+
+        return new QuizGame(playerNameParam, 0, questions);
     }
 
     public static Boolean isValidAnswer(String selectedAnswer) {
@@ -86,11 +156,11 @@ public class Main {
     public static Question getSecondQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(createAnswer("a", "Seoul", false));
-        answers.add(createAnswer("b", "Khartoum", false));
-        answers.add(createAnswer("c", "Hanoi", true));
+        answers.add(createAnswer("b", "Manila", true));
+        answers.add(createAnswer("c", "Hanoi", false));
         answers.add(createAnswer("d", "Taipei", false));
 
-        return createQuestion(1, "Capital city of Vietnam ?", answers);
+        return createQuestion(1, "Capital city of Philippines ?", answers);
     }
 
     public static Question getThirdQuestionWithAnswers() {
@@ -322,7 +392,9 @@ public class Main {
 
         return createQuestion(4, "Who is the all-time top scorer in the football World Cup?", answers);
     }
+
     public static Question createQuestion(int id, String descriptionQuestion, ArrayList<Answer> answers) {
+        //TODO: Add validations for parameters - answers.length...
         return new Question(id, descriptionQuestion, answers);
     }
 
