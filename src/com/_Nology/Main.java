@@ -116,6 +116,205 @@ public class Main {
         return createQuestion(4, "Capital city of Switzerland ?", answers);
     }
 
+    private static Question getSixthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "A sponge", false));
+        answers.add(createAnswer("b", "A stone", false));
+        answers.add(createAnswer("c", "A candle", false));
+        answers.add(createAnswer("d", "An egg", true));
+
+        return createQuestion(4, "What has to be broken before you can use it ?", answers);
+    }
+
+    private static Question getSeventhQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Germany", false));
+        answers.add(createAnswer("b", "Uk", false));
+        answers.add(createAnswer("c", "New Zealand", true));
+        answers.add(createAnswer("d", "Italy", false));
+
+        return createQuestion(4, "What was the first country to approve women's suffrage ?", answers);
+    }
+
+    private static Question getEighthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "1959", false));
+        answers.add(createAnswer("b", "1969", true));
+        answers.add(createAnswer("c", "1967", false));
+        answers.add(createAnswer("d", "1981", false));
+
+        return createQuestion(4, "In what year did man reach the moon ?", answers);
+    }
+
+    private static Question getNinethQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Venice", true));
+        answers.add(createAnswer("b", "Milan", false));
+        answers.add(createAnswer("c", "Marseille", false));
+        answers.add(createAnswer("d", "Rome", false));
+
+        return createQuestion(4, "What was Marco Polo's home city ?", answers);
+    }
+
+    private static Question getTenthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "2000", false));
+        answers.add(createAnswer("b", "1985", false));
+        answers.add(createAnswer("c", "1994", true));
+        answers.add(createAnswer("d", "1952", false));
+
+        return createQuestion(4, "In what year did the Rwandan genocide take place ?", answers);
+    }
+
+    private static Question getEleventhQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "1991", true));
+        answers.add(createAnswer("b", "2015", false));
+        answers.add(createAnswer("c", "1960", false));
+        answers.add(createAnswer("d", "1500 BC ;)", false));
+
+        return createQuestion(4, "In what year was the Soviet Union dissolved ?", answers);
+    }
+
+    private static Question getTwelfthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Canary Islands", false));
+        answers.add(createAnswer("b", "Malta", false));
+        answers.add(createAnswer("c", "Greece", true));
+        answers.add(createAnswer("d", "Cyprus", false));
+
+        return createQuestion(4, "To which country does the island of Crete belong ?", answers);
+    }
+
+    private static Question getThirteenthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Poland", false));
+        answers.add(createAnswer("b", "Hungary", true));
+        answers.add(createAnswer("c", "Peru", false));
+        answers.add(createAnswer("d", "Luxembourg", false));
+
+        return createQuestion(4, "In which country in Europe is Magyar spoken ?", answers);
+    }
+
+    private static Question getFourteenthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Brazil", false));
+        answers.add(createAnswer("b", "Japan", false));
+        answers.add(createAnswer("c", "China", false));
+        answers.add(createAnswer("d", "France", true));
+
+        return createQuestion(4, "What is the most visited country in the world ?", answers);
+    }
+
+    private static Question getFifteenthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "USA and Russia", true));
+        answers.add(createAnswer("b", "Morocco and Spain", false));
+        answers.add(createAnswer("c", "Japan and China", false));
+        answers.add(createAnswer("d", "UK and France", false));
+
+        return createQuestion(4, "Between which countries is the Bering Strait ?", answers);
+    }
+
+    private static Question getSixteenthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Wolfgang Amadeus Mozart", false));
+        answers.add(createAnswer("b", "Van Gogh", false));
+        answers.add(createAnswer("c", "Pablo Picasso", true));
+        answers.add(createAnswer("d", "Leonardo Da Vinci", false));
+
+        return createQuestion(4, "Who painted the 'Guernica' ?", answers);
+    }
+
+    private static Question getSeventeenthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Jolly Jumper", false));
+        answers.add(createAnswer("b", "Rocinante", true));
+        answers.add(createAnswer("c", "Margarita", false));
+        answers.add(createAnswer("d", "John Doe", false));
+
+        return createQuestion(4, "What is the name of Don Quixote de la Mancha's horse ?", answers);
+    }
+
+    private static Question getEighteenthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Butane gas", false));
+        answers.add(createAnswer("b", "Oxygen", false));
+        answers.add(createAnswer("c", "Hydrogen", false));
+        answers.add(createAnswer("d", "Ozone", true));
+
+        return createQuestion(4, "What gas in the atmosphere protects us from ultraviolet radiation ?", answers);
+    }
+
+    private static Question getNineteenthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Sugar Cane", false));
+        answers.add(createAnswer("b", "Agave", true));
+        answers.add(createAnswer("c", "Rosemary", false));
+        answers.add(createAnswer("d", "Palm tree", false));
+
+        return createQuestion(4, "From which plant is tequila made ?", answers);
+    }
+
+    private static Question getTwentiethQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Baker Street", true));
+        answers.add(createAnswer("b", "Carnaby Street", false));
+        answers.add(createAnswer("c", "Barking Road", false));
+        answers.add(createAnswer("d", "Piccadilly Street", false));
+
+        return createQuestion(4, "What fictional street did Sherlock Holmes live on ?", answers);
+    }
+
+    private static Question getTwentyFirstQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Roger Moore", false));
+        answers.add(createAnswer("b", "Pierce Brosnan", false));
+        answers.add(createAnswer("c", "Sean Connery", true));
+        answers.add(createAnswer("d", "Daniel Craig", false));
+
+        return createQuestion(4, "Which of the actors who played James Bond fought Dr. No ?", answers);
+    }
+
+    private static Question getTwentySecondQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Optimus Prime", true));
+        answers.add(createAnswer("b", "Amazon Prime", false));
+        answers.add(createAnswer("c", "Ironhide", false));
+        answers.add(createAnswer("d", "Megatron", false));
+
+        return createQuestion(4, "What is the name of the leader of the Autobots in the 'Transformers' movie saga ?", answers);
+    }
+
+    private static Question getTwentyThirdQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Madagascar", false));
+        answers.add(createAnswer("b", "USA", false));
+        answers.add(createAnswer("c", "China", false));
+        answers.add(createAnswer("d", "Uk", true));
+
+        return createQuestion(4, "Where was Ping-Pong invented?", answers);
+    }
+
+    private static Question getTwentyFourthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "Miami Heat", false));
+        answers.add(createAnswer("b", "Chicago Bulls", false));
+        answers.add(createAnswer("c", "Boston Celtics", true));
+        answers.add(createAnswer("d", "Los Angeles Lakers", false));
+
+        return createQuestion(4, "What is the NBA team with the most titles ?", answers);
+    }
+
+    private static Question getTwentyFifthQuestionWithAnswers() {
+        ArrayList<Answer> answers = new ArrayList<Answer>();
+        answers.add(createAnswer("a", "John Terry", false));
+        answers.add(createAnswer("b", "Miroslav Klose", true));
+        answers.add(createAnswer("c", "Diego Armando Maradona", false));
+        answers.add(createAnswer("d", "Ronaldinho Gáucho", false));
+
+        return createQuestion(4, "Who is the all-time top scorer in the football World Cup?", answers);
+    }
     public static Question createQuestion(int id, String descriptionQuestion, ArrayList<Answer> answers) {
         return new Question(id, descriptionQuestion, answers);
     }
