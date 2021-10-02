@@ -98,7 +98,30 @@ public class Main_test {
     @Test
     public void isValidAnswerWithNotAllowedLetters_isInvalid() {
         // Arrange
-        String selectedAnswer = "D";
+        String[] notAllowedLetters = {"e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+        Main main = new Main();
+
+        for (int index = 0; index < notAllowedLetters.length; index++) {
+            // Act
+            Boolean result = main.isValidAnswer(notAllowedLetters[index]);
+            // Assert
+            assertEquals(false, result);
+        }
+    }
+
+    @Test
+    public void isValidAnswerWithNotAllowedNumbers_isInvalid() {
+        // Arrange
+        String[] notAllowedNumbers = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        Main main = new Main();
+
+        for (int index = 0; index < notAllowedNumbers.length; index++) {
+            // Act
+            Boolean result = main.isValidAnswer(notAllowedNumbers[index]);
+            // Assert
+            assertEquals(false, result);
+        }
+    }
         Main main = new Main();
         // Act
         Boolean result = main.isValidAnswer(selectedAnswer);
