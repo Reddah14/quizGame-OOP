@@ -7,16 +7,6 @@ import static org.junit.Assert.assertEquals;
 
 public class Answer_test {
     @Test
-    public void creatingAnswerSetsProperlyDescriptionAnswer() {
-        // Arrange
-        Answer myTestAnswer = new Answer("a", "Brussels", false);
-        // Act
-        String result = myTestAnswer.getDescriptionAnswer();
-        // Assert
-        assertEquals("Brussels", result);
-    }
-
-    @Test
     public void creatingAnswerSetsProperlyCodeAnswer() {
         // Arrange
         Answer myTestAnswer = new Answer("a", "Brussels", false);
@@ -24,6 +14,16 @@ public class Answer_test {
         String result = myTestAnswer.getCodeAnswer();
         // Assert
         assertEquals("a", result);
+    }
+
+    @Test
+    public void creatingAnswerSetsProperlyDescriptionAnswer() {
+        // Arrange
+        Answer myTestAnswer = new Answer("a", "Brussels", false);
+        // Act
+        String result = myTestAnswer.getDescriptionAnswer();
+        // Assert
+        assertEquals("Brussels", result);
     }
 
     @Test

@@ -10,6 +10,17 @@ import static org.junit.Assert.assertEquals;
 
 public class Question_test {
     @Test
+    public void creatingQuestionSetsProperlyId() {
+        // Arrange
+        int id = 0;
+        Question myTestQuestion = new Question(id, new String("hello?"),new ArrayList<Answer>());
+        // Act
+        int result = myTestQuestion.getId();
+        // Assert
+        assertEquals(id, result);
+    }
+
+    @Test
     public void creatingQuestionSetsProperlyDescriptionQuestion() {
         // Arrange
         String descriptionQuestion = "Capital city of Spain";
@@ -18,25 +29,5 @@ public class Question_test {
         String result = myTestQuestion.getDescriptionQuestion();
         // Assert
         assertEquals(descriptionQuestion, result);
-    }
-
-    @Test
-    public void creatingAnswerSetsProperlyCodeQuestion() {
-        // Arrange
-        Answer myTestAnswer = new Answer("a", "Brussels", false);
-        // Act
-        String result = myTestAnswer.getCodeAnswer();
-        // Assert
-        assertEquals("a", result);
-    }
-
-    @Test
-    public void creatingQSetsProperlyIsCorrect() {
-        // Arrange
-        Answer myTestAnswer = new Answer("a", "Brussels", false);
-        // Act
-        Boolean result = myTestAnswer.getIsCorrect();
-        // Assert
-        assertEquals(false, result);
     }
 }

@@ -303,6 +303,7 @@ public class Main {
         return createQuestion(4, "Who painted the 'Guernica' ?", answers);
     }
 
+
     private static Question getSeventeenthQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(createAnswer("a", "Jolly Jumper", false));
