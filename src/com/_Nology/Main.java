@@ -11,8 +11,9 @@ public class Main {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("What's you're name?");
         String playerName = myScanner.nextLine();
-        System.out.println("Welcome to Fun with Capitals, " + playerName + " !");
+        System.out.println("Welcome to QuizzyQuiz, " + playerName + " !");
         System.out.println("Every right answer will give you 10 points, and you will have 5 questions..");
+        System.out.println("In order to win you'll need 30 points.");
         System.out.println("Good Luck ! ^^");
 
         QuizGame player1game = getRandomQuizSetForQuizGame(playerName);
@@ -31,6 +32,7 @@ public class Main {
                 System.out.println("Not a valid answer, select a correct option please!");
                 playerAnswer = myScanner.nextLine();
             }
+
             if (isCorrectThisAnswer(playerAnswer, question.answers)) {
                 player1game.addPlayerScore(10);
                 System.out.println("Bravoooo, You got it right ! you accumulate 10 points!");
