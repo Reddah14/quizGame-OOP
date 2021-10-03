@@ -49,4 +49,13 @@ public class QuizGame {
             return true;
         }
     }
+
+    public Boolean isCorrectThisAnswer(String selectedCodeAnswer, ArrayList<Answer> answers) {
+        answers.removeIf(answer -> !answer.codeAnswer.contains(selectedCodeAnswer));
+        if (answers.get(0).getIsCorrect()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

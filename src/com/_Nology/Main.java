@@ -32,7 +32,7 @@ public class Main {
                 playerAnswer = myScanner.nextLine();
             }
 
-            if (isCorrectThisAnswer(playerAnswer, question.answers)) {
+            if (player1game.isCorrectThisAnswer(playerAnswer, question.answers)) {
                 player1game.addPlayerScore(10);
                 System.out.println("Bravoooo, You got it right ! you accumulate 10 points!");
             } else {
@@ -124,15 +124,6 @@ public class Main {
         questions.add(getTwentyFifthQuestionWithAnswers());
 
         return new QuizGame(playerNameParam, 0, questions);
-    }
-
-    public static Boolean isCorrectThisAnswer(String selectedCodeAnswer, ArrayList<Answer> answers) {
-        answers.removeIf(answer -> !answer.codeAnswer.contains(selectedCodeAnswer));
-        if (answers.get(0).getIsCorrect()) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     public static Question getFirstQuestionWithAnswers() {
@@ -294,7 +285,6 @@ public class Main {
 
         return createQuestion(4, "Who painted the 'Guernica' ?", answers);
     }
-
 
     private static Question getSeventeenthQuestionWithAnswers() {
         ArrayList<Answer> answers = new ArrayList<Answer>();
