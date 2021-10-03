@@ -40,4 +40,13 @@ public class QuizGame {
     public void addPlayerScore(int playerScore) {
         this.playerScore += playerScore;
     }
+
+    public Boolean isValidAnswer(String selectedAnswer) {
+        selectedAnswer = selectedAnswer.toLowerCase();
+        if (!selectedAnswer.equals("a") && !selectedAnswer.equals("b") && !selectedAnswer.equals("c") && !selectedAnswer.equals("d")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

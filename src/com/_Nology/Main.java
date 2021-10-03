@@ -13,8 +13,7 @@ public class Main {
         String playerName = myScanner.nextLine();
         System.out.println("Welcome to QuizzyQuiz, " + playerName + " !");
         System.out.println("Every right answer will give you 10 points, and you will have 5 questions..");
-        System.out.println("In order to win you'll need 30 points.");
-        System.out.println("Good Luck ! ^^");
+        System.out.println("In order to win you'll need 30 points. Good Luck ! ^^");
 
         QuizGame player1game = getRandomQuizSetForQuizGame(playerName);
 
@@ -28,7 +27,7 @@ public class Main {
             System.out.println("Choose your answer!");
             String playerAnswer = myScanner.nextLine();
 
-            while (!isValidAnswer(playerAnswer)) {
+            while (!player1game.isValidAnswer(playerAnswer)) {
                 System.out.println("Not a valid answer, select a correct option please!");
                 playerAnswer = myScanner.nextLine();
             }
@@ -125,15 +124,6 @@ public class Main {
         questions.add(getTwentyFifthQuestionWithAnswers());
 
         return new QuizGame(playerNameParam, 0, questions);
-    }
-
-    public static Boolean isValidAnswer(String selectedAnswer) {
-        selectedAnswer = selectedAnswer.toLowerCase();
-        if (!selectedAnswer.equals("a") && !selectedAnswer.equals("b") && !selectedAnswer.equals("c") && !selectedAnswer.equals("d")) {
-            return false;
-        } else {
-            return true;
-        }
     }
 
     public static Boolean isCorrectThisAnswer(String selectedCodeAnswer, ArrayList<Answer> answers) {
